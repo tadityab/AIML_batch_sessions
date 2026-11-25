@@ -154,3 +154,33 @@ def get_person_name(one_person: Person)-> str:
 p = Person("Ram")
 
 print(get_person_name(p))
+
+print("-" * 20)
+ 
+# Literal in TypeHint 
+
+from typing import Literal 
+
+def set_access(name: str, role: Literal["admin","editor","viewer"]) -> str:
+    return f"{name} has a {role} permission"
+
+print(set_access("Ram","admin"))
+print(set_access("Sham","viewer"))
+print(set_access("Kiran","xyz"))
+
+print("-" * 20)
+
+# Enum in TypeHint 
+
+from enum import Enum 
+
+class Role(Enum):
+    ADMIN = "admin"
+    EDITOR = "editor"
+    VIEWER = "viewer"
+
+def assign_role(user: str, role: Role) -> str:
+    return f"{user} has a role name = {role.name}, role value = {role.value}"
+
+print(assign_role("Ram",Role.ADMIN))
+
