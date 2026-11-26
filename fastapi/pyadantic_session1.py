@@ -203,7 +203,9 @@ except ValidationError as e:
     print(f"Total number of error: {e.error_count()}")
     for err in e.errors():
         print(f"Fields : {err['loc']}  , Type : {err['type']} ,  Message: {err['msg']}")
-    
+
+ 
+
 
 
 
